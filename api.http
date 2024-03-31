@@ -1,0 +1,28 @@
+@base-uri = http://127.0.0.1:8085
+@socket-uri = http://127.0.0.1:8086
+
+### 
+# @name ping
+
+GET {{base-uri}}/ HTTP/1.1
+Content-Type: application/json
+
+###
+# @name market
+
+GET {{base-uri}}/v1/coin/market
+Content-Type: application/json
+
+
+###
+# @name market
+
+GET {{socket-uri}}/v1/coin/market
+Content-Type: application/json
+
+
+###
+curl -X POST 'https://api.livecoinwatch.com/coins/single' \
+  -H 'content-type: application/json' \
+  -H 'x-api-key: 4362cb12-14c5-4695-b3ec-c2bad7c3589c' \
+  -d '{"currency":"USD","code":"ETH","meta":true}'

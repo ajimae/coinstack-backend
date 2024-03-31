@@ -1,0 +1,17 @@
+version: "3.2"
+
+services:
+  api:
+    build:
+      context: .
+    env_file: ./.env.development
+    volumes:
+      - type: volume
+        source: bvn
+        target: /usr/share/bvn/data
+        read_only: true
+    ports:
+      - 8081:8081
+      - 50051:50051
+volumes:
+  bvn:
